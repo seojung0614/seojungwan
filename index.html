@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- 웹페이지 정보 -->
+  <meta name="author" content="portfolio">
+  <meta name="keywords" content="portfolio,personal portfolio,web portfolio,design port folio,포트폴리오,개인 포트폴리오,웹 포트폴리오,디자인 포트폴리오">
+  <meta name="discription" content="풀스택 개발자를 꿈꾸는 초보 웹퍼블리셔/디자이너의 포트폴리오">
+  <meta name="copyright" content="cho hwan-joon">
+  <!-- 오픈그래픽 -->
+  <meta property="og:title" content="portfolio">
+  <meta property="og:url" content="http://seojung95.dothome.co.kr/portfolio">
+  <meta property="og:image" content="./images/ogimage.png">
+  <meta property="og:discription" content="풀스택 개발자를 꿈꾸는 초보 웹퍼블리셔/디자이너의 포트폴리오">
+  <!-- 트위터 -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="portfolio">
+  <meta name="twitter:url" content="http://seojung95.dothome.co.kr/portfolio">
+  <meta name="twitter:image" content="./images/ogimage.png">
+  <meta name="twitter:discription" content="풀스택 개발자를 꿈꾸는 초보 웹퍼블리셔/디자이너의 포트폴리오">  
+    <title>Seojung</title>
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="./css/default.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/1440under.css">
+<style>
+   
+    
+</style>
+
+<script src="./js/jquery.min.js"></script>
+<script src="./js/prefixfree.min.js"></script>
+
+
+<script>
+$(function(){    
+    let positionLeft = 0
+    let txtLeft = 0;
+    let cnt = 0
+    let typingBool = false; 
+    let typingIdx=0; 
+    let liIndex = 0;
+    let liLength = $(".typing_txt>ul>li").length;
+    let typingTxt = $(".typing_txt>ul>li").eq(liIndex).text(); 
+    typingTxt=typingTxt.split("");
+    if(typingBool==false){
+    typingBool=true; 
+    let tyInt = setInterval(typing,100);    
+}      
+    function typing(){ 
+  $(".typing ul li").removeClass("on");
+   $(".typing ul li").eq(liIndex).addClass("on");   
+  if(typingIdx<typingTxt.length){
+     $(".typing ul li").eq(liIndex).append(typingTxt[typingIdx]);
+     typingIdx++; 
+   } else{ if(liIndex<liLength-1){     
+       liIndex++;      
+        typingIdx=0;
+        typingBool = false; 
+        typingTxt = $(".typing_txt>ul>li").eq(liIndex).text();        
+         setTimeout(function(){           
+           tyInt = setInterval(typing,100);
+         },1000);
+        } else if(liIndex==liLength-1){                   
+            clearInterval(tyInt);
+        }
+    } 
+}  
+
+    $('#btn_nav').on('click',function(){
+        $('.nav').addClass('active');
+    })   
+
+    $(".nav").mouseup(function (e){
+        
+        if($(".nav").has(e.target).length === 0){
+            $(".nav").removeClass("active");
+        }
+        /* console.log(e.target);
+        console.log($('.nav').length); */
+        
+    }); 
+
+
+    $('#btn_nav_clo').on('click',function(){
+        $('.nav').removeClass('active');        
+    })
+
+
+ 
+
+//========================================
+    function goTop(){
+    $(document).scrollTop(0);
+    }
+
+    $('.btn_click').on('click',function(){
+    $('.loading').addClass('active');    
+/* 인트로 파트  첫화면 golive클릭후에 동작함*/
+    setInterval(function(timer){
+        $('.mulcong_img_box').addClass('active');
+        clearInterval(timer);
+    },500)    
+    setInterval(function(timer){
+        $('.text_box').addClass('active');
+        $('.text_box img').addClass('active');
+        $('.intro .container h1').addClass('active');
+        clearInterval(timer)
+    },1000)
+    goTop();
+})   
+
+
+//========================================
+/* SCROLL */
+    $(window).on('scroll',function(e){
+        let scrTop = $(document).scrollTop();
+        /* console.log(scrTop); */
+        scroll(scrTop);
+        scroll2(scrTop);
+        scroll3(scrTop);
+        headerscroll(scrTop);
+        /* console.log(scrTop); */
+    })    
+    /* HEADER SCROLL */
+    function headerscroll(i){
+        if(i>0){
+            $('.header').addClass('active');
+        }else{
+            $('.header').removeClass('active');
+        }
+    }
+/* about */
+    /* ABOUT SCROLL */
+    function scroll(e){
+            if(e >= 111){
+                $('.about h2,.about .img_box,.about h3,.about p,.about .about_bottom p,.about .img_box02 img,.about .container').addClass('active')                ;
+                }else{
+                $('.about h2,.about .img_box,.about h3,.about p,.about .about_bottom p,.about .img_box02 img,.about .container').removeClass('active');             
+            };
+        }
+/* skills */
+    /* SKILLS SCROLL */
+    function scroll2(e){
+        if(e >=555){
+            $('.skill_img,.skill_img .effect,.skills h2,.skills').addClass('active');
+
+            /* 스킬아이콘 원상복구 */
+        $('#html').attr('src','./images/skills_bubble_html.gif');
+        $('#html_txt').text('HTML');
+        $('#css').attr('src','./images/skills_bubble_css.gif');
+        $('#css_txt').text('CSS');
+        $('#js').attr('src','./images/skills_bubble_js.gif');
+        $('#js_txt').text('JavaScript');
+        $('#jq').attr('src','./images/skills_bubble_jq.gif');
+        $('#jq_txt').text('jQuery');
+        $('#ps').attr('src','./images/skills_bubble_ps.gif');
+        $('#ps_txt').text('Photoshop');
+        $('#ai').attr('src','./images/skills_bubble_illu.gif');
+        $('#ai_txt').text('Illustrator');
+
+        }
+        else{
+            $('.skill_img,.skill_img .effect,.skills h2').removeClass('active');
+        };   
+
+    } 
+    
+/* SKILLS ICON */   
+        $('.effect li').on('click',function(){
+            
+            let Img = $(this).children('div').children('img')
+            let Txt = $(this).children('p')
+            let thisIndex = $(this).index();
+            if(thisIndex == 0){
+            Img.attr('src','./images/skills_html.png');
+            Txt.text('웹표준 기반으로 웹문서를 작성할수 있습니다.');
+            }
+            else if(thisIndex == 1){
+               Img.attr('src','./images/skills_css.png');
+               Txt.text('트렌드를 반영한 레이아웃 구현을 할수 있습니다.');
+            }
+            else if(thisIndex == 2){
+               Img.attr('src','./images/skills_js.png');
+               Txt.text('각종 이벤트를 작성 할 수 있기 위해서 열심히 공부중입니다.');
+            }
+            else if(thisIndex == 3){
+               Img.attr('src','./images/skills_jq.png');
+               Txt.text('각종 메서드,플러그인 조합으로 반응형 웹을 구현할수있습니다.');
+            }
+            else if(thisIndex== 4){
+               Img.attr('src','./images/skills_ps.png');
+               Txt.text('디자인제작,보정 등 상세 페이지 제작이 가능합니다 ');
+            }
+            else if(thisIndex == 5){
+               Img.attr('src','./images/skills_ai.png');
+               Txt.text('icon / CI /BI/ 캐릭터 디자인 제작이 가능합니다.');
+            }
+            
+        })
+    /* PORTFOLIO SCROLL */
+    function scroll3(e){
+        if(e >= 1122){
+            $('.slider_container,.port_content h2,.port_content>p').addClass('active');
+            rightSliderdown(300);    
+        }else{
+            $('.slider_container,.port_content h2,.port_content>p').removeClass('active');
+            rightSliderup(300);
+        }        
+    }
+    function rightSliderup(){
+        $('.slider_right_container').slideUp(300);
+    }
+    function rightSliderdown(){
+        $('.slider_right_container').slideDown(300);
+    }
+    
+        $('.slider').on('click',function(){
+        let slideIndex = $(this).last()
+        /* console.log(slideIndex) */
+        
+    })
+    
+  
+
+    //다음버튼슬라이드
+    /* 포폴 추가시 ul의 너비만 조절해주면 됨 */
+    $('#btn_next').on('click',function(){        
+        let slideLength = $('.slide li').length -1;
+        if(cnt < slideLength){
+            cnt++;
+            positionLeft -= 360;
+            txtLeft -= 480;
+            $('#slide').animate({
+                left : positionLeft + 'px'
+            },200);
+            $('.slide_right').animate({
+                left : txtLeft + 'px'
+            },200);            
+        }
+    });
+    // 이전버튼슬라이드
+    $('#btn_prev').on('click',function(){
+        if(positionLeft < 0){
+            cnt -= 1
+            positionLeft += 360;
+            txtLeft += 480;
+            $('#slide').animate({
+                left : positionLeft + 'px'
+            },200);
+            $('.slide_right').animate({
+                left : txtLeft + 'px'
+            },200);            
+        }
+    });
+    txtTyping()
+    function txtTyping(){
+        let foot = $('.foot_tit');        
+        let txtStrong = $('.foot_tit').text().trim();
+        /* console.log(txtStrong) */
+        foot.text('')
+        
+        let subSting = '';
+        let indexNum = 0;
+        let rotateString = setInterval(function(){            
+            if(indexNum < txtStrong.length){
+            subSting = subSting + txtStrong[indexNum];            
+            foot.text(subSting)            
+            indexNum++;
+            /* console.log(subSting) */
+        }else{
+            subSting = '';            
+            indexNum = 0
+        }   
+        },150)
+   
+    }
+
+
+})
+
+
+
+
+
+
+
+
+
+</script>
+
+</head>
+<body>
+       <!-- 스킵 메뉴 -->
+       <div class="skip_menu">
+        <a href="#intro">메인화면 바로가기</a>
+        <a href="#about">내 소개 바로가기</a>
+        <a href="#skills">skills 바로가기</a>
+        <a href="#portfolio">포트폴리오 바로가기</a>
+    </div>  
+
+
+<!--  -->
+    <div class="loading">
+        <div class="loading_tit">
+            <div class="typing_txt">
+                <ul>
+                    <li>Seo_Jung_Wan</li>
+                    <li>Portfolio.html</li>                
+                </ul>
+            </div>
+            <div class="typing">
+                <ul>
+                    <li></li>
+                    <li></li>                    
+                </ul>
+            </div>
+<!--  -->
+            <div class="btn_click">                                
+                <p>Go Live</p>
+                <img src="./images/go_live.png" alt="">
+            </div>
+            <div class="click_event">
+                <p>Click!</p>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="wrap">
+        <header class="header">
+            <div class="container">
+                <div class="content header_content">
+                    <div class="main_logo">
+                        <a href="./index.html"><img src="./images/logo.png" alt="메인로고"></a>
+                    </div>
+                    
+                    <div class="btn_nav" id="btn_nav">
+                       
+                        <img src="./images/ham_before.png" alt="햄버거버튼">
+                    </div>
+                    <nav class="nav">
+                        <div class="nav_content">
+                            <div class="btn_nav_clo" id="btn_nav_clo">
+                                <img src="./images/clo_btn.png" alt="닫기버튼">
+                            </div>
+                            <ul class="main_nav">
+                                <li><a href="./index.html">HOME</a></li>
+                                <li><a href="#intro">INTRO</a></li>
+                                <li><a href="#about">ABOUT ME</a></li>
+                                <li><a href="#skills">SKILLS</a></li>
+                                <li><a href="#portfolio">PORTFOLIO</a></li>
+                            </ul>
+                            <ul class="sns">
+                                <li>
+                                    <a href="#">
+                                    <i class="fab fa-instagram-square"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#email">
+                                        <i class="fab fa-google"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+
+
+                </div>
+            </div>
+        </header>
+        <section class="section intro" id="intro">
+            <div class="container">
+                <div class="mulcong_img_box">
+                    <img src="./images/mulcongkey.gif" alt="캐릭터디자인" >
+                </div>                 
+                <h1 class="text_box">                    
+                Welcome <br> to <br>My Portfolio
+                <img src="./images/text.gif" alt="말풍선">
+                </h1>                
+            </div>
+        </section>
+        <section class="section about" id="about">
+             <div class="container">
+                 <div class="content about_content">
+                     <h2>About Me</h2>
+                     <div class="about_top">
+                        <div class="img_box">
+                            <div class="face">
+                            <img src="./images/myface.png" alt="내 얼굴">
+                            </div>
+                            
+                        </div>
+                        <h3 class="h3">
+                            안녕하세요! <br>
+                            신입 웹 퍼블리셔<br>
+                            서정완입니다.
+                        </h3>
+                    </div>
+                    <div class="about_bottom">
+                        <div class="img_box02">
+                            <img src="./images/mulcongabout.gif" alt="물콩 뒷모습">
+                        </div>
+                        <p class="p">
+                           저는 그림이나 영상처럼 <br>
+                           무언가를 만들어서<br>
+                           표현하는것을 <br> 좋아하는 사람이에요 그렇게 <br>                        
+                           웹 퍼블리싱에 대해서 알게 되었고 <br>
+                           웹퍼블리싱의 매력에 빠졌답니다. <br>
+                           아직은 많이 부족하겠지만 <br> 끊임없는 노력과 열정으로 <br>
+                           성장하는 퍼블리셔가 되겠습니다. 
+                           
+                        </p>
+                    </div>
+                 </div>
+             </div>
+
+        </section>
+        <section class="section skills" id="skills">
+            <div class="container">
+                <div class="content skills_content">
+                    <h2>My Skills</h2>                    
+                    <div class="skill_img">
+                        <ul class="effect"> 
+                            <li>
+                                <div class="skill_icon">
+                                    <img id="html" src="./images/skills_bubble_html.gif" alt="HTML">
+                                </div>
+                                <p class="skill_txt" id="html_txt">HTML</p>                                
+                            </li>
+
+                            <li>
+                                <div class="skill_icon">
+                                    <img id="css" src="./images/skills_bubble_css.gif" alt="HTML">
+                                </div>
+                                <p class="skill_txt" id="css_txt">CSS</p>                                
+                            </li>                      
+
+                            <li>
+                                <div class="skill_icon">
+                                    <img id="js" src="./images/skills_bubble_js.gif" alt="HTML">
+                                </div>
+                                <p class="skill_txt"id="js_txt">JavaScript</p>                                
+                            </li>                        
+                        
+                            <li>
+                                <div class="skill_icon">
+                                    <img id="jq" src="./images/skills_bubble_jq.gif" alt="HTML">
+                                </div>
+                                <p class="skill_txt"id="jq_txt">jQuery</p>                                
+                            </li>
+                   
+                            <li>
+                                <div class="skill_icon">
+                                    <img id="ps" src="./images/skills_bubble_ps.gif" alt="HTML">
+                                </div>
+                                <p class="skill_txt"id="ps_txt">PhotoShop</p>                                
+                            </li>
+
+                            <li>
+                                <div class="skill_icon">
+                                    <img id="ai" src="./images/skills_bubble_illu.gif" alt="HTML">
+                                </div>
+                                <p class="skill_txt"id="ai_txt">Illustrator</p>                                
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section portfolio" id="portfolio">
+            <div class="container">
+                <div class="content port_content">
+                    <h2 >Portfolio</h2>
+                    <p>지금까지 <br> 제작한 웹페이지들 입니다.</p>
+                    <div class="port_slider">
+                        <div class="slider_container">
+                            <ul class="slide clearfix" id="slide">
+                                <li class="slider slider01">
+                                 <img src="./images/MEGA.gif" alt="메가박스">
+                                 <div class="slider_content">
+                                  <div class="slider_txt">
+                                    <h3>MegaBox</h3>
+                                    <p>반응형 웹페이지 <br> 기획,디자인,제작</p>
+                                  </div>                            
+                                  <div class="btn_view">
+                                    <a href="./portfolio_index/megabox/index.html" target="blank"> VIEW SITE </a>
+                                  </div>                            
+                                 </div>
+                                </li>
+                               <li class="slider slider02">
+                                  <img src="./images/HANSOL.gif" alt="한솔">
+                                  <div class="slider_content">
+                                    <div class="slider_txt">
+                                    <h3>Hansol</h3>
+                                    <p>반응형 웹페이지 </p>
+                                    </div>                                
+                                    <div class="btn_view">
+                                    <a href="./portfolio_index/Hansol/index.html"target="blank">  VIEW SITE </a>
+                                    </div>                            
+                                </div>                          
+                               </li>
+                               <li class="slider slider03">
+                                 <img src="./images/INDIGO.gif" alt="인디고">
+                                     <div class="slider_content">
+                                        <div class="slider_txt">
+                                            <h3>Indigo</h3>
+                                            <p>반응형 웹페이지 <br> 기획,디자인,제작</p>
+                                        </div>                                
+                                        <div class="btn_view">
+                                            <a href="./portfolio_index/indigo/index.html" target="blank"> VIEW SITE </a>
+                                        </div>                            
+                                     </div>                    
+                               </li>
+                               <li class="slider slider04">
+                                <img src="./images/MOZILLA.gif" alt="모질라">
+                                 <div class="slider_content">
+                                    <div class="slider_txt">
+                                        <h3>Mozilla</h3>
+                                        <p>반응형 웹페이지</p>
+                                    </div>                                
+                                    <div class="btn_view">
+                                       <a href="./portfolio_index/mozilla/index.html" target="blank">  VIEW SITE </a>
+                                    </div>                            
+                                 </div>                       
+                               </li>
+                               <li class="slider slider04">
+                                <img src="./images/FELLACOFFEE.gif" alt="펠어커피">
+                                 <div class="slider_content">
+                                    <div class="slider_txt">
+                                        <h3>Fell a Coffee</h3>
+                                        <p>반응형 웹페이지 <br> 기획,디자인,제작</p>
+                                    </div>                                
+                                    <div class="btn_view">
+                                        <a href="./portfolio_index/FELLA/index.html" target="blank">  VIEW SITE </a>
+                                    </div>                            
+                                 </div>                       
+                               </li>
+                            </ul>
+                            <div class="btn_prev_next">
+                                <div class="btn_prev" id="btn_prev">
+                                   <i class="fas fa-chevron-left"></i>
+                                </div>
+                                <div class="btn_next" id="btn_next">
+                                   <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+            <!--  -->    
+            <!-- 760 slider txt -->
+            <div class="port_right_slider">
+                <div class="slider_right_container">
+                <ul class="slide_right clearfix">
+                    <li class="slider_right">                            
+                <div class="slider_txt">
+                    <h3>MegaBox</h3>
+                    <p>반응형 웹페이지 <br> 기획,디자인,제작</p>
+                    </div>
+                    <div class="btn_view">
+                        <a href="./portfolio_index/megabox/index.html" target="blank">  VIEW SITE </a>
+                    </div>
+                    </li>
+                    <li class="slider_right">                            
+                <div class="slider_txt">
+                    <h3>Hansol</h3>
+                    <p>반응형 웹페이지</p>
+                    </div>
+                    <div class="btn_view">
+                        <a href="./portfolio_index/Hansol/index.html" target="blank">  VIEW SITE </a>
+                    </div>
+                    </li>
+                    <li class="slider_right">                            
+                <div class="slider_txt">
+                    <h3>Indigo</h3>
+                    <p>반응형 웹페이지 <br> 기획,디자인,제작</p>
+                    </div>
+                    <div class="btn_view">
+                        <a href="./portfolio_index/indigo/index.html" target="blank">  VIEW SITE </a>
+                    </div>
+                    </li>
+                    <li class="slider_right">                            
+                <div class="slider_txt">
+                    <h3>Mozilla</h3>
+                    <p>반응형 웹페이지</p>
+                    </div>
+                    <div class="btn_view">
+                        <a href="./portfolio_index/mozilla/index.html" target="blank">  VIEW SITE </a>
+                    </div>
+                    </li>
+                    <li class="slider_right">                            
+                <div class="slider_txt">
+                    <h3>FellaCoffee</h3>
+                    <p>반응형 웹페이지 <br> 기획,디자인,제작</p>
+                    </div>
+                    <div class="btn_view">
+                        <a href="./portfolio_index/FELLA/index.html" target="blank">  VIEW SITE </a>
+                    </div>
+                    </li>
+                </ul>
+             </div>
+            </div> 
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer_content">
+                    <div class="footer_txt">
+                        <h3 class="h3 foot_tit">
+                             방문해주셔서 감사합니다
+                        </h3>
+                        <p>
+                            연락을 주시면 최대한 빠르게 답하겠습니다
+                        </p>
+                    </div>
+
+                    <div class="mail">
+                       <p>E-mail <br> seojungwan95@gmail.com</p>
+                    </div>
+                    <div class="phone_num">
+                        <p>010 - 6659 - 3859</p>
+                    </div>
+
+                    <div class="download">
+                            
+                        <p>
+                            <a href="./이력서.hwp" download>이력서</a>
+                        </p>
+                        <p>
+                            <a href="./seojungwanPortfolio.pdf" download>PDF</a>
+                        </p>
+                    </div>
+                </div>
+
+                
+                <div class="copyright">
+                    <p>Copyright 2021 SEO</p>
+                </div>
+
+                <div class="left_memo">                  
+                        <img src="./images/rotate.gif" alt="캐릭터">
+                </div>
+            </div>
+        </footer>
+    </div>    
+
+</body>
+
+</html>
+

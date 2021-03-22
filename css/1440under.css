@@ -1,0 +1,443 @@
+@charset 'utf-8';
+
+
+    /* 미디어쿼리 637PX 이상 */
+    @media (min-width: 637px){
+        /* loading */
+        .loading_tit{font-size: 32px;}
+        .typing{
+            width: 460px;            
+        }
+        .btn_click{
+            font-size: 28px;
+        }
+        .btn_click img{
+            left: -43px;
+        }
+        .click_event{top: 46%;left: 60%;}
+/*  */
+        .skills h2,
+        .portfolio h2{
+        text-align: left;
+        font-size: 36px;
+    }
+    .text_box{
+        position: relative;
+        top: 0;
+        opacity: 0;        
+        animation: updown 3s ease infinite;
+        transition: 2s;
+    }        
+    
+    
+    @keyframes updown{
+        0%{top: 20px;}
+        25%{top: 30px;}
+        50%{top: 20px;}
+        75%{top: 30px;}
+        100%{top: 20px;}
+    }
+
+
+
+
+    /* ABOUT */
+    .about p{
+        font-size: 18px;
+        line-height: 28px;    
+    }
+    /* SKILLS */
+    .skill_img{
+        margin: 0 6.228261%;
+    }
+    .skill_img .effect{
+        padding: 0;
+        
+    }
+    .skills_content ul{
+        justify-content:initial;
+    }
+    .skills_content ul li{
+        padding-left: 16%;
+    }
+    .skills_content ul li:nth-child(2n){
+        margin-left: 0;
+    }
+    .skills_content ul li:first-child{
+        padding-left: 0;
+    }  
+    .skills_content ul li:nth-child(3n){
+        padding-right: 0;
+    }    
+    .skills_content .skill_icon img {
+        margin-bottom: 30px;
+    }
+
+
+    .skills_content ul li p{
+        width: 150px;        
+        left: initial;        
+        bottom: -20px;
+        
+        
+        
+        
+        
+    }
+    
+    .skills_content ul li:nth-child(2n) p{
+        left: inherit;
+    }
+
+
+    /* footer */
+    .footer .container{
+        text-align: center;
+        height: 400px;
+    }
+    .port_content>p{
+        font-size: 24px;            
+    }
+    .footer_txt h3{
+        font-size: 32px;
+    }
+    .footer_txt p{
+        font-size: 22px;
+    }
+    .mail p{
+        font-size: 20px;
+    }
+    .phone_num{
+        font-size: 20px;
+    }
+    .download p a{
+        font-size: 24px;            
+    }
+
+    .left_memo{
+        display: inline-block;
+        position: absolute;
+        /* background-color: rgb(0,0,0,0.2); */
+        border-radius: 4px;
+        margin-top: 1rem;
+        padding: 1rem;
+        left: 12px;
+        top: 30%;
+        color: #333;
+        font-weight: 500;
+        width: 200px;
+    }
+    .left_memo img{
+        width: 100%;
+    }
+
+
+    }
+    /* 미디어쿼리 760PX 이상 */
+    @media (min-width: 760px){
+
+    /* HEADER */
+    .header{
+        height: 60px;
+        padding: 15px 12px;
+    }
+
+    .header_content{
+        height: 50px;
+    }
+
+    /* nav */
+    .nav_content{
+        max-width: 400px;
+        height: 600px;
+    }
+    .main_nav li{
+        font-size: 32px;
+        font-weight: 600;
+        
+    }
+    .sns i::before{
+        font-size: 50px;
+    }
+
+
+
+    /* intro */
+    .intro{
+        height: 420px;
+    }
+    .intro .container{
+        margin-top: 80px;
+        padding-bottom: 80px;
+    }
+    .intro .container h1{
+        font-size: 32px;
+        top: 11%;
+        left: 20%;
+    }
+    .intro .container h1 img{
+        width: 300px;
+     }
+    .mulcong_img_box{
+        bottom: 80px;
+    }
+    .mulcong_img_box img{
+        width: 360px;
+    }    
+    /* ABOUT */
+    .about{
+        padding: 0;
+    }
+    .about .container{
+        padding-bottom: 60px;
+    }
+    .about .about_content h2{
+        font-size: 36px;
+    }    
+    .about_content .about_top{
+        flex-flow: row-reverse nowrap;
+        justify-content: space-between;
+    }
+    .about .img_box{
+        display: flex;
+        justify-content: flex-end;     
+        margin: 0;  
+        width: 240px;
+    }
+    .about .img_box img{
+        width: 100%
+    }
+    .about_top h3{
+        font-size: 32px;
+        line-height: 42px;        
+    }
+    .about_bottom{
+        align-items: flex-end;
+    }
+    .about_bottom p{
+        padding-top: 15px;
+        font-size: 18px;
+        line-height: 30px;
+    }
+    .about .img_box02{
+        width: 21.05978260869565%;
+    }
+    /* skills */
+    .skill_img{
+        margin: 0 10.228261%;
+    }
+
+/* portfolio */
+
+    .portfolio .container{
+        padding: 30px 12px;
+    }
+    .port_content h2{
+        padding-left: 0;
+    }
+    .port_content>p{
+        padding-left: 0;
+    }
+    .slider_container{
+        height: 450px;
+    }
+    .port_slider{
+        margin-left: 0;
+    }
+    .btn_prev{    
+    top: 60%;
+}
+.btn_next{
+    top: 60%;    
+}
+/* PORTFOLIO RIGHT */
+
+    .port_right_slider{
+        display: initial;
+    }
+    .port_content{
+        position: relative;
+    }    
+    .slider_content{
+        display: none;
+    }
+    .port_right_slider{        
+        position: absolute;
+        top: 60%;
+        left: 86%;
+        transform: translate(-50%,-50%);
+        width: 480px;
+        overflow: hidden;
+    }
+    .slider_right_container{
+        position: relative;
+        height: 250px;    
+                
+    }
+    /* .slider_right_container .slide_right
+    의 width = 이미지 갯수 너비 합 */
+    .slider_right_container .slide_right{
+        width: 3000px;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }  
+    .slide_right .slider_right{
+        width: 480px;
+        height: 240px;
+        display: flex;
+        flex-flow: column ;
+        justify-content: space-between;
+        float: left;
+        padding-right: 40px;
+    }
+    .slider_right .slider_txt{
+        padding-bottom: 20px;
+    }
+    .slider_right .slider_txt h3{
+        font-size: 48px;
+        margin-bottom: 14px;
+    }
+    .slider_right .slider_txt p{
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 32px;        
+    }
+    .btn_view{
+        width: 240px;
+        font-size: 28px;
+        text-align: center;
+    }
+    }
+    @media (min-width:895px){
+        .skills_content ul li {
+            padding-left: 17%;
+        }
+    }
+
+    /* 미디어쿼리 960PX 이상 */
+    @media (min-width:960px){
+
+
+        .loading_tit{font-size: 40px;}
+        .typing{
+            width: 600px;
+        }
+        .btn_click{
+            width: 300px;
+            font-size: 38px;
+        }
+        .btn_click img{
+            left: -52px;
+        }
+        .click_event{top: 46%;left: 60%;}
+        /* header */
+        
+        .about_bottom p {
+            font-size: 24px;
+        }
+
+        
+        /* intro */
+        .intro .container h1{
+            font-size: 48px;
+        }
+        .intro .container h1 img{
+            width: 450px;
+        }
+    .skill_img{
+        margin: 0 10%;
+    }
+    .skills_content ul li{
+        padding: 0 12%;
+    }
+
+    }
+    /* 미디어쿼리 1280PX 이상 */
+    @media (min-width:1280px){
+
+        .click_event{
+            left: 55%;
+        }
+
+
+        /* active */
+        .about .about_bottom p.active{
+        opacity: 1;
+        } 
+        /* intro */
+    .intro .container{
+        padding-bottom: 60px;
+    }
+    .intro .container h1{
+        font-size: 42px;
+        left: 8%;
+    }
+    .intro .container h1 img{
+        width: 420px;
+    }
+    .mulcong_img_box img{
+        width: 460px;
+    }
+    /* about */
+    .about_content{
+        position: relative;
+    }
+    .about .about_content h2{
+        font-size: 48px;
+    }
+    .about .about_top h3{
+        font-size: 36px;
+        line-height: 48px;
+    }
+    .about_content .about_top{
+        position: relative;
+        display: block;        
+    }
+    .about_top .img_box{
+        position: absolute;
+        width: 360px;
+        top: -70px;
+        right: 0;
+    }
+    .about .img_box02{
+        width: 11.953125%;
+    }
+    .about .about_bottom p{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 22px;
+        line-height: 32px;
+        opacity: 0;
+        transition: 0.5;
+    }
+ 
+    /* skills */
+    .skill_img .effect{
+        padding-left: 10%;
+    }
+    /* footer */
+    .port_slider{
+        margin-left: 180px;
+    }
+    .footer_txt h3{
+        font-size: 52px;
+    }
+    .footer_txt p{
+        font-size: 32px;
+    }
+    .mail p{
+        font-size: 28px;
+    }
+    .phone_num p{
+        font-size: 28px;
+    }
+    }
+
+  /*   @media (min-width:1440px){
+        .click_event{
+            left: 60%;
+        }
+        } */

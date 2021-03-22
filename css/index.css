@@ -1,0 +1,730 @@
+@charset 'utf-8';
+
+
+
+.section h2{
+
+}
+
+
+
+
+
+
+  /* acitve---------------- */
+    /* header */
+    .nav.active{
+        left:0;
+        right: 0;
+    }    
+       
+    .header.active{
+        background-color: rgb(0,0,0,0.2);
+    }
+
+    /* intro */
+    .text_box.active{
+        opacity: 1;        
+    }    
+    .mulcong_img_box.active{
+        opacity: 1;        
+    }
+    .intro .container h1.active{
+        opacity: 1;
+    }
+    /* about */
+    .about h2.active{
+        left: 0;
+        text-shadow: none
+    }
+    .about .img_box.active{
+        opacity: 1;
+        transform: rotate(0);
+    }
+    .about h3.active{
+        color: #333;
+        opacity: 1;
+        transform: scale(1);
+        text-shadow: none;
+    }
+    .about .container.active::after{
+        transition: 0.3s;
+        display: none;
+    }
+    .about p.active{
+        left: 0;
+    } 
+    .about .img_box02 img.active{
+        bottom: 0;
+    }
+    
+
+    /* SKILLS */
+
+
+    .skill_img.active{
+        opacity: 1;
+    }
+    .skill_img .effect.active{
+        animation: rightleft ease 2s ;
+    }
+    .skills h2.active{
+        opacity: 1;
+    }
+    /* portfolio */
+    .slider_container.active{
+    left: 0;
+}
+.port_content>p.active{
+    opacity: 1;
+    text-shadow: none
+}
+.port_content h2.active{
+    opacity: 1;
+}
+
+
+  
+    /* HEADER */
+    .header{
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        z-index: 10000;
+        background-color: #fff;        
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        transition: 0.3s;
+    }
+    
+    .header .container{        
+        padding: 0;
+    }
+    .header_content{
+        
+        position: relative;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .main_logo a img{
+        width: 33px;
+        height: 26px;
+    }
+
+    /* 햄버거버튼 네비 */    
+    .nav{
+        z-index: 20;
+        position: absolute;
+        left: 200%;
+        top: 0;
+        padding: 0;
+        right: -100%;
+        width: 100%;
+        background-color: rgb(0,0,0,0.2);
+        border-radius: 10px;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-end;        
+        transition: 0.5s;
+        z-index: 10;
+    }
+    .btn_nav{
+        cursor: pointer;
+        
+    }
+   
+    .nav_content{
+        width: 100%;
+        max-width: 200px;
+        background-color: #fff;
+        border-radius: 10px;
+        display: flex;
+        flex-flow: column nowrap;
+        padding: 0 12px 12px 12px;
+    }
+    .main_nav li{
+        font-size: 16px;
+        font-weight: 500;
+        padding-bottom: 30px;
+        text-align: right;
+    }
+    .sns{
+        display: flex;
+        justify-content: flex-end;
+    }
+    .sns i::before{
+        font-size: 25px;
+        padding-left: 50px;
+    }
+    .btn_nav_clo{
+        padding-top: 10px;
+        cursor: pointer;
+    }
+    /*  */
+    /* INFO STYLE */
+    .intro{        
+        
+        width: 100%;
+        height: 360px;
+        max-width: 1440px;
+        background-color: #fff;        
+    }
+
+    .intro .container{
+        margin-top: 50px;
+        position: relative;
+        height: 100%;
+        padding-bottom: 40px;
+    }
+    
+    .intro .container h1{
+        position: relative;
+        text-align: center;
+        transition: 0.3s;  
+        font-size: 24px;
+        opacity: 0; 
+        font-family: 'Luckiest Guy';
+    }
+       
+    .text_box{
+        position: relative;
+        top: 0;
+        opacity: 0;        
+        animation: updown 3s ease infinite;
+        transition: 2s;
+    }        
+    
+    
+    @keyframes updown{
+        0%{top: 00px;}
+        25%{top: 10px;}
+        50%{top: 00px;}
+        75%{top: 10px;}
+        100%{top: 00px;}
+    }
+
+
+  
+    .intro .container h1 img{
+        position: absolute;
+        width: 219px;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        transition: ease 0.5s;   
+                  
+    }
+    
+ 
+
+    .mulcong_img_box{
+        position: absolute;
+        bottom: 40px;
+        opacity: 0;
+        transition: ease 1s;
+        
+        
+    }
+ 
+    .mulcong_img_box img{
+        width: 100%;
+        width: 252px;
+        transition: 0.3s;
+    }
+
+    /* about */
+
+    .about{
+        width: 100%;
+        max-width: 1440px;
+        background-color: #f6f6f6;      
+        
+    }
+    .about .container{
+        position: relative;
+        padding-bottom: 60px;
+    }
+    .about .container::after{
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        content: 'SCROLL';
+        text-align: center;
+        width: 100px;
+        height: 100px;
+        background-color: red;        
+        background: url(../images/scroll.png) no-repeat center;        
+        animation: scroll 1s infinite;
+        transition: 0.3s;
+    }
+    
+    @keyframes scroll{
+        0%{top: 0;}
+        50%{top: 20px;}
+        100%{top: 0;}
+    }
+    .about_content{
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .about h2{
+        margin-bottom: 30px;
+        font-size: 24px;
+        font-weight: 600;
+        position: relative;
+        left: -100%;
+        transition: 0.5s ease;
+        text-shadow: 0px 5px 7px #000;
+    }    
+    
+    .about_content .about_top{
+        display: flex;
+        flex-flow: column nowrap;
+    }
+    .about .img_box{
+        width: 53.57142857142857%;
+        margin: 0 auto;
+        margin-bottom: 15px;
+        opacity: 0;
+        transition: 0.5s ease;
+        transform: rotate(20deg);
+    }
+   
+    .about .img_box img{
+        width: 100%;
+        border-radius: 10px;
+    }
+    .about h3{
+        font-size: 24px;
+        line-height: 36px;
+        font-weight: 500;
+        text-align: left;
+        position: relative;
+        transition: 0.5s ease;
+        color: #9edbf9;
+        opacity: 0;
+        transform: scale(1.4);
+        text-shadow: 0px 5px 10px #fff;
+    }
+   
+    .about_top{
+        margin-bottom: 30px;
+    }
+    
+    .about_bottom{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;        
+    }
+    .about .img_box02{        
+        width: 31.8452380952381%;
+        position: relative;
+        left: 50px;
+        overflow: hidden;
+    }
+    
+    .about .img_box02 img{
+        width: 100%;
+        position: relative;
+        transition: 0.5s;
+        bottom: -320px;
+    }
+ 
+    .about p{
+        position: relative;
+        font-size: 14px;
+        line-height: 24px;
+        font-weight: 500;
+        text-align: right;
+        left: 100%;
+        transition: 0.6s;
+        
+    }
+   
+   
+    /* skills */
+
+    .skills{
+        width: 100%;
+        background-color: #9edbf9;
+        border-radius: 20px;        
+        position: relative;
+        margin-bottom: 30px;
+    }
+    .skills::before{
+        content: '';
+        width: 100%;        
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;           
+
+        background: url(../images/bubble.gif) no-repeat center;
+        background-size: cover;
+        
+        opacity: 0;
+        transition: 0.3s;
+    }
+    .skills.active::before{
+        opacity: 0.3;
+    }
+
+    .skills_ .container{
+        background-color: transparent;
+    }
+    .skills_content{
+        overflow: hidden;
+    }
+    
+    .skill_img {
+        opacity: 0;
+        transition: 0.3s;
+    }
+   
+    .skill_img .effect{        
+        padding: 0 33px;
+        position: relative;
+        top: 0;        
+    }
+
+    
+    @keyframes rightleft{
+        0%{top: 120px;left: 0;opacity: 0;}
+        25%{left: 40px;opacity: 0.3;}
+        50%{left: 0; opacity: 0.6;}
+        75%{left: 40px; opacity: 1;}
+        100%{ top: 0;left: 0;}
+    }
+    @keyframes infirightleft{
+        0%{left: 0;}
+        50%{left: 10px;}
+        100%{left: 0;}
+        
+    }
+    
+    
+    .skills_content ul{        
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+    .skills_content ul li{
+        position: relative;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;        
+    }
+    .skill_icon{
+        cursor: pointer;
+    }
+    .skills_content .skill_icon img{
+        width: 90px;
+        height: 90px;
+        margin-bottom: 10px;        
+    }
+    .skills_content ul li:nth-child(2n){
+        margin-left: 67%;
+    }
+
+    .skills_content p{    
+        position: absolute;           
+        text-align: center;        
+        font-size: 14px;
+        font-weight: 600;
+    }
+   .skills .skill{
+       font-size: 20px;
+   }
+    .skills_content ul li p{
+        display: inline-block;  
+        width: 150px;  
+        position: absolute;
+        left: 100px;
+        transition: 0.3s;
+        background-color: rgb(0,0,0,0.2);
+        border-radius: 4px;
+        color: #fff;
+        padding: 0.5rem;
+    }
+    .skills_content ul li:nth-child(2n) p{
+        left: -200px;
+        
+    }
+    .skills h2{
+        text-align: center;
+        margin-bottom: 60px;
+        opacity: 0;
+        transition: 2s;
+    }
+    
+
+
+    .skills_content{
+        position: relative;
+    }
+    .skills_content>p{
+        position: absolute;
+        left: 50%;
+        top: 10%;
+        transform: translate(-50%,-50%);        
+    }
+
+
+
+/* portfolio */
+.portfolio{
+    background-color: #f6f6f6;
+    background: url(../images/portback022.png) no-repeat center;
+    background-size: cover;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+.portfolio .container{
+    padding: 30px 0;
+}
+.port_content h2{
+    padding: 0 12px 45px 12px;
+    opacity: 0;
+    transition: 2s;
+
+}
+
+.port_content>p{
+    padding: 0 12px 30px 12px;
+    font-size: 16px;
+    font-weight: 500;
+    opacity: 0;
+    text-shadow: 0 5px 10px #000;
+    transition: 2s;
+}
+
+
+
+
+.port_slider{
+    width: 360px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.slider_container{
+    position: relative;
+    height: 529px;
+    padding-bottom: 60px;
+    left: 100%;
+    transition: 0.3s;
+}
+
+/*  */
+.slider_container .slide{
+    width: 3600px;
+    position: absolute;
+    left: 0;
+    top: 0;    
+}
+.slider_container .slide::before{
+    content: '';
+    position: relative;
+    background: url(../images/slide.png);
+    top: 0%;
+    left: 0;
+    width: 120px;
+    height: 60px;
+    
+}
+
+.slider{
+    width: 360px;
+    float: left;
+}
+.slider img{
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    
+}
+
+.btn_prev{    
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.btn_next{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.btn_prev i::before,
+.btn_next i::before{
+    font-size: 32px;
+    color: #fff;
+}
+.slider_content{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 12px;
+}
+.port_content h3{
+    font-size: 18px;
+    margin-bottom: 14px;
+    
+}
+
+.slider_content p{
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 27px;
+}
+.btn_view{
+    font-size: 18px;
+    font-weight: 900;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: #9edbf9;
+    text-align: center;    
+    cursor: pointer;
+}
+.btn_view a{
+    color: #fff;    
+}
+.btn_view:active{
+    background-color: #8f99cd;
+}
+.slider_txt{
+    height: 94px;
+    color: #fff;
+}
+
+
+
+
+
+/* PORTFOLIO 760 RIGHT */
+.port_right_slider{
+    display: none;
+}
+.slider_right_content{
+    display: none;
+}
+
+
+
+/* footer */
+
+.footer{
+    background-color: rgb(158, 219, 249,0.5);
+    /* background-image: url(../images/portback01.png); */
+    background-size: cover;
+    border-radius: 10px;    
+}
+.footer .container{
+    height: 350px;
+    padding-bottom: 60px;
+    position: relative;
+}
+.footer_txt{
+    padding-bottom: 15px;
+}
+.footer_txt h3{
+    font-size: 24px;    
+}
+.footer_txt p{
+    font-size: 18px;
+}
+.mail{
+    padding-bottom: 20px;
+}
+.mail p{
+    font-size: 20px;
+    font-weight: 600;
+}
+.phone_num{
+    font-weight: 600;
+    padding-bottom: 15px;
+}
+.download{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;    
+    
+}
+.download p{
+    padding-right: 1rem;
+}
+.download p a{
+    display: inline-block;        
+    padding: 5px 1rem;
+    border-radius: 4px;
+    background-color: #2f4c9c;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+}
+
+
+
+/* .download::after{
+    content: '';
+    transition: 0.5s;
+}
+.download p:hover::after{
+    content: '이력서 다운로드 받기!';
+    position: absolute;
+    top: 0;
+    left: 100px;
+    border-radius: 10px;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 0;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #333;
+    background-color: #fff;
+    font-weight: 500;
+} */
+
+
+
+
+    .copyright{
+        position: absolute;
+        right: 0;
+        top: 20%;       
+        animation: colorchange 2s infinite; 
+    }
+    @keyframes colorchange{
+        0%{color: #333;}
+        50%{color: #fff;}
+        100%{color: #333;}
+    }
+
+    .copyright p{
+        writing-mode: vertical-rl;
+        font-size: 24px;
+    }
+
+    .left_memo{
+        display: none;
+    }
+
+
+    
